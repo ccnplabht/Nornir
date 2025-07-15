@@ -1,2 +1,2 @@
 # Nornir
-Learning Nornir with Cbtnugget
+Learning Nornir with Cbtnuggets
