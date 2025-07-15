@@ -1,0 +1,109 @@
+2025-07-12 16:09:08,317 -  nornir.core -     INFO -        run() - Running task 'remove_config' with args {} on 4 hosts
+2025-07-12 16:09:14,150 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-12 16:10:34,929 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 20:04:40,471 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 20:05:14,940 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 20:05:44,841 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 20:06:03,806 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 20:06:49,779 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 20:15:16,268 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 20:28:37,074 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 21:13:49,099 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 21:13:49,728 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'show_command_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_command_from_file.py", line 14, in show_command_test
+    task.run(task=send_commands_from_file , file ="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/randomcommands.txt")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands_from_file (failed)
+
+
+2025-07-12 21:13:49,730 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'show_command_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_command_from_file.py", line 14, in show_command_test
+    task.run(task=send_commands_from_file , file ="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/randomcommands.txt")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands_from_file (failed)
+
+
+2025-07-12 21:13:49,899 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'show_command_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_command_from_file.py", line 14, in show_command_test
+    task.run(task=send_commands_from_file , file ="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/randomcommands.txt")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands_from_file (failed)
+
+
+2025-07-12 21:13:49,900 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'show_command_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_command_from_file.py", line 14, in show_command_test
+    task.run(task=send_commands_from_file , file ="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/randomcommands.txt")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands_from_file (failed)
+
+
+2025-07-12 21:15:04,389 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 21:15:05,012 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'show_command_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_command_from_file.py", line 14, in show_command_test
+    task.run(task=send_commands_from_file , file ="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/randomcommands.txt")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands_from_file (failed)
+
+
+2025-07-12 21:15:05,028 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'show_command_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_command_from_file.py", line 14, in show_command_test
+    task.run(task=send_commands_from_file , file ="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/randomcommands.txt")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands_from_file (failed)
+
+
+2025-07-12 21:15:05,040 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'show_command_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_command_from_file.py", line 14, in show_command_test
+    task.run(task=send_commands_from_file , file ="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/randomcommands.txt")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands_from_file (failed)
+
+
+2025-07-12 21:15:05,041 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'show_command_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_command_from_file.py", line 14, in show_command_test
+    task.run(task=send_commands_from_file , file ="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/randomcommands.txt")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands_from_file (failed)
+
+
+2025-07-12 21:15:43,061 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts

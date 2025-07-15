@@ -1,0 +1,4 @@
+ntp server 3.3.3.3
+snmp-server community cisco
+interface Gi0/0
+description Test

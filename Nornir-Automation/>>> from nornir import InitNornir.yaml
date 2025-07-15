@@ -1,0 +1,8 @@
+>>> from nornir import InitNornir
+>>> nr = InitNornir(config_file="config.yaml")
+>> nr.inventory.hosts
+{'R1': Host: R1, 'R2': Host: R2, 'R3': Host: R3, 'R4': Host: R4}
+>>> nr.inventory.hosts["R1"]
+Host: R1
+>>> nr.inventory.hosts["R1"].username
+'pvolcy'

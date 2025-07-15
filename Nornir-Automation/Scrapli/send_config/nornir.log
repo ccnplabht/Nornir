@@ -1,0 +1,165 @@
+2025-07-12 21:24:20,538 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 21:25:21,523 -  nornir.core -     INFO -        run() - Running task 'send_config_test' with args {} on 4 hosts
+2025-07-12 21:28:17,927 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts
+2025-07-12 21:30:33,164 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts
+2025-07-12 21:30:33,165 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs_from_file() got an unexpected keyword argument 'configs'
+
+2025-07-12 21:30:33,165 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs_from_file() got an unexpected keyword argument 'configs'
+
+2025-07-12 21:30:33,165 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs_from_file() got an unexpected keyword argument 'configs'
+
+2025-07-12 21:30:33,166 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/send_config_from_file.py", line 14, in send_configs_test
+    task.run(task=send_configs_from_file , configs="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/randomconfigs.txt ")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-07-12 21:30:33,166 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs_from_file() got an unexpected keyword argument 'configs'
+
+2025-07-12 21:30:33,167 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/send_config_from_file.py", line 14, in send_configs_test
+    task.run(task=send_configs_from_file , configs="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/randomconfigs.txt ")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-07-12 21:30:33,166 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/send_config_from_file.py", line 14, in send_configs_test
+    task.run(task=send_configs_from_file , configs="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/randomconfigs.txt ")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-07-12 21:30:33,166 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/send_config_from_file.py", line 14, in send_configs_test
+    task.run(task=send_configs_from_file , configs="/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/randomconfigs.txt ")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-07-12 21:31:26,710 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts
+2025-07-12 21:31:26,711 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs_from_file() got an unexpected keyword argument 'configs'
+
+2025-07-12 21:31:26,711 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs_from_file() got an unexpected keyword argument 'configs'
+
+2025-07-12 21:31:26,711 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs_from_file() got an unexpected keyword argument 'configs'
+
+2025-07-12 21:31:26,711 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs_from_file() got an unexpected keyword argument 'configs'
+
+2025-07-12 21:31:26,712 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/send_config_from_file.py", line 14, in send_configs_test
+    task.run(task=send_configs_from_file , configs="randomconfigs.txt", dry_run=True)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-07-12 21:31:26,712 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/send_config_from_file.py", line 14, in send_configs_test
+    task.run(task=send_configs_from_file , configs="randomconfigs.txt", dry_run=True)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-07-12 21:31:26,712 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/send_config_from_file.py", line 14, in send_configs_test
+    task.run(task=send_configs_from_file , configs="randomconfigs.txt", dry_run=True)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-07-12 21:31:26,712 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/send_config/send_config_from_file.py", line 14, in send_configs_test
+    task.run(task=send_configs_from_file , configs="randomconfigs.txt", dry_run=True)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2025-07-12 21:31:45,719 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts
+2025-07-12 21:32:18,840 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts
+2025-07-12 21:32:49,602 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts
+2025-07-12 21:33:46,989 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 21:34:03,825 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts
+2025-07-12 21:34:55,159 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts
+2025-07-12 21:35:37,578 -  nornir.core -     INFO -        run() - Running task 'show_command_test' with args {} on 4 hosts
+2025-07-12 21:35:50,165 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 4 hosts

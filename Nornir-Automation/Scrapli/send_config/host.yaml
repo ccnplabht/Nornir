@@ -1,0 +1,23 @@
+---
+
+R1:
+    hostname: "192.168.0.11"
+    groups:
+        - usa_group
+
+R2:
+    hostname: "192.168.0.12"
+    groups:
+        - euro_group
+ 
+R3:
+    hostname: "192.168.0.13"
+    groups:
+        - usa_group
+
+R4:
+    hostname: "192.168.0.14"
+    groups:
+        - euro_group
+
+

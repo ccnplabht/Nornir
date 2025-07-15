@@ -1,0 +1,3 @@
+banner motd & THIS AND AUTOMATED BANNER &
+username pvolcy priv 15 secret pvolcy
+ntp server 55.66.77.88

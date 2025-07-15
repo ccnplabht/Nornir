@@ -1,0 +1,2 @@
+2025-07-14 12:20:53,109 -  nornir.core -     INFO -        run() - Running task 'pull_random_info' with args {} on 4 hosts
+2025-07-14 12:28:20,860 -  nornir.core -     INFO -        run() - Running task 'ping' with args {} on 4 hosts

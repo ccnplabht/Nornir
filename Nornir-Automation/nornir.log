@@ -1,0 +1,1635 @@
+2025-07-08 18:49:23,687 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-08 18:49:45,081 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-08 18:49:53,198 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 4 hosts
+2025-07-08 18:50:10,954 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 4 hosts
+2025-07-08 18:50:10,960 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 160, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+        name=f"scrapli_community.{community_platform_name.replace('_', '.')}"
+    )
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.cisco.ios'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/connection.py", line 99, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 508, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+                                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 329, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        community_platform_name=platform, variant=variant
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 291, in _get_community_driver
+    platform_details = _get_community_platform_details(
+        community_platform_name=community_platform_name
+    )
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 171, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+******************************************************************************************************* Module not found! *******************************************************************************************************
+                         Scrapli Community platform 'cisco_ios` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!                         
+*********************************************************************************************************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+    ~~~~~~~~~~~~~~~~~~~~^
+        connection=connection,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        extras=conn.extras,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+    ~~~~~~~~~~~~~^
+        hostname=hostname,
+        ^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        configuration=configuration,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/connection.py", line 101, in open
+    raise NornirScrapliInvalidPlatform(
+    ...<2 lines>...
+    ) from exc
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `cisco_ios` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2025-07-08 18:50:10,961 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 160, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+        name=f"scrapli_community.{community_platform_name.replace('_', '.')}"
+    )
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.cisco.ios'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/connection.py", line 99, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 508, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+                                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 329, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        community_platform_name=platform, variant=variant
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 291, in _get_community_driver
+    platform_details = _get_community_platform_details(
+        community_platform_name=community_platform_name
+    )
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 171, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+******************************************************************************************************* Module not found! *******************************************************************************************************
+                         Scrapli Community platform 'cisco_ios` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!                         
+*********************************************************************************************************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+    ~~~~~~~~~~~~~~~~~~~~^
+        connection=connection,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        extras=conn.extras,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+    ~~~~~~~~~~~~~^
+        hostname=hostname,
+        ^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        configuration=configuration,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/connection.py", line 101, in open
+    raise NornirScrapliInvalidPlatform(
+    ...<2 lines>...
+    ) from exc
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `cisco_ios` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2025-07-08 18:50:10,961 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 160, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+        name=f"scrapli_community.{community_platform_name.replace('_', '.')}"
+    )
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.cisco.ios'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/connection.py", line 99, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 508, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+                                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 329, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        community_platform_name=platform, variant=variant
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 291, in _get_community_driver
+    platform_details = _get_community_platform_details(
+        community_platform_name=community_platform_name
+    )
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 171, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+******************************************************************************************************* Module not found! *******************************************************************************************************
+                         Scrapli Community platform 'cisco_ios` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!                         
+*********************************************************************************************************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+    ~~~~~~~~~~~~~~~~~~~~^
+        connection=connection,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        extras=conn.extras,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+    ~~~~~~~~~~~~~^
+        hostname=hostname,
+        ^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        configuration=configuration,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/connection.py", line 101, in open
+    raise NornirScrapliInvalidPlatform(
+    ...<2 lines>...
+    ) from exc
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `cisco_ios` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2025-07-08 18:50:10,962 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 160, in _get_community_platform_details
+    scrapli_community_platform = importlib.import_module(
+        name=f"scrapli_community.{community_platform_name.replace('_', '.')}"
+    )
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'scrapli_community.cisco.ios'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/connection.py", line 99, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 508, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+                                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 329, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        community_platform_name=platform, variant=variant
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 291, in _get_community_driver
+    platform_details = _get_community_platform_details(
+        community_platform_name=community_platform_name
+    )
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/scrapli/factory.py", line 171, in _get_community_platform_details
+    raise ScrapliModuleNotFound(warning) from exc
+scrapli.exceptions.ScrapliModuleNotFound: 
+
+******************************************************************************************************* Module not found! *******************************************************************************************************
+                         Scrapli Community platform 'cisco_ios` not found!
+To resolve this issue, ensure you have the correct platform name, and that a scrapli  community platform of that name exists!                         
+*********************************************************************************************************************************************************************************************************************************
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+    ~~~~~~~~~~~~~~~~~~~~^
+        connection=connection,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        extras=conn.extras,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+    ~~~~~~~~~~~~~^
+        hostname=hostname,
+        ^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        configuration=configuration,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir_scrapli/connection.py", line 101, in open
+    raise NornirScrapliInvalidPlatform(
+    ...<2 lines>...
+    ) from exc
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: Provided platform `cisco_ios` is not a valid scrapli or napalm platform, or is not a valid scrapli-community platform.
+
+2025-07-08 18:50:27,227 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 4 hosts
+2025-07-08 18:50:45,649 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 4 hosts
+2025-07-08 19:02:15,522 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:02:15,525 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.hodst['ntp_server']}")
+                                                      ^^^^^^^^^^
+AttributeError: 'Task' object has no attribute 'hodst'. Did you mean: 'host'?
+
+2025-07-08 19:02:15,525 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.hodst['ntp_server']}")
+                                                      ^^^^^^^^^^
+AttributeError: 'Task' object has no attribute 'hodst'. Did you mean: 'host'?
+
+2025-07-08 19:02:15,525 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.hodst['ntp_server']}")
+                                                      ^^^^^^^^^^
+AttributeError: 'Task' object has no attribute 'hodst'. Did you mean: 'host'?
+
+2025-07-08 19:02:15,526 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.hodst['ntp_server']}")
+                                                      ^^^^^^^^^^
+AttributeError: 'Task' object has no attribute 'hodst'. Did you mean: 'host'?
+
+2025-07-08 19:02:24,596 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:02:24,598 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:02:24,598 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:02:24,598 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:02:24,599 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:03:47,844 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:03:47,846 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:03:47,846 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:03:47,846 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:03:47,847 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:05:40,373 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:05:40,374 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:05:40,375 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:05:40,375 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:05:40,375 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:05:46,351 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:05:46,353 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:05:46,353 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:05:46,354 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:05:46,354 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:08:52,027 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:08:52,029 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:08:52,029 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:08:52,029 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:08:52,030 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:09:22,029 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:09:22,031 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:09:22,032 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:09:22,032 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:09:22,032 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 10, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:11:32,435 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:11:32,437 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:11:32,437 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:11:32,437 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:11:32,438 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:13:06,646 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:15:05,828 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:16:09,329 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:16:09,331 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 9, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:16:09,332 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 9, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:16:09,332 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 9, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:16:09,332 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 9, in random_config
+    task.run(task=send_config , config= f"ntp server {task.host['ntp_server']}")
+                                                      ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:19:13,778 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:19:13,780 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:19:13,780 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:19:13,780 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:19:13,781 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:19:34,661 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:19:34,662 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:19:34,663 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:19:34,663 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:19:34,664 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:20:41,815 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:20:41,816 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:20:41,816 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:20:41,817 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:20:41,817 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:22:24,025 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:22:24,027 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:22:24,027 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:22:24,028 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:22:24,028 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:27:19,550 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:27:19,552 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:27:19,552 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:27:19,553 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:27:19,553 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:27:32,323 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:27:32,326 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:27:32,326 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:27:32,327 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:27:32,326 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:32:15,281 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:32:15,283 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:32:15,283 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:32:15,283 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:32:15,284 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:32:23,534 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:32:23,534 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:32:23,535 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:32:23,535 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:32:23,535 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:33:45,387 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:35:46,976 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:39:03,655 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:40:24,735 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:40:36,945 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:40:36,945 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:40:36,946 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:40:36,946 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:40:36,946 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.data['ntp_server']}")
+                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:40:46,719 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-08 19:40:46,720 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:40:46,721 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:40:46,721 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-08 19:40:46,721 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 8, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 12:44:40,575 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 4 hosts
+2025-07-12 12:45:44,704 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 4 hosts
+2025-07-12 12:45:54,679 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 4 hosts
+2025-07-12 12:46:37,367 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 12:46:37,369 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 9, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 12:46:37,369 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 9, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 12:46:37,370 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 9, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 12:46:37,370 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 9, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 12:50:18,789 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 12:50:18,791 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 11, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 12:50:18,791 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 11, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 12:50:18,792 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 11, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 12:50:18,792 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 11, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:00:33,989 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 13:00:33,991 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:00:33,991 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:00:33,991 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:00:33,992 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:00:49,903 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 13:00:49,904 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:00:49,904 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:00:49,905 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:00:49,905 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:04:59,879 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 13:04:59,880 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:04:59,881 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:04:59,881 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:04:59,881 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 12, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host['ntp_server']}")
+                                                    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:26:49,794 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 13:26:49,796 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 19, in random_config
+    task.run(task=send_config, config=f"ntp server {host.groups[0].data["ntp_server"]}")
+                                                    ^^^^
+NameError: name 'host' is not defined
+
+2025-07-12 13:26:49,796 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 19, in random_config
+    task.run(task=send_config, config=f"ntp server {host.groups[0].data["ntp_server"]}")
+                                                    ^^^^
+NameError: name 'host' is not defined
+
+2025-07-12 13:26:49,797 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 19, in random_config
+    task.run(task=send_config, config=f"ntp server {host.groups[0].data["ntp_server"]}")
+                                                    ^^^^
+NameError: name 'host' is not defined
+
+2025-07-12 13:26:49,797 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 19, in random_config
+    task.run(task=send_config, config=f"ntp server {host.groups[0].data["ntp_server"]}")
+                                                    ^^^^
+NameError: name 'host' is not defined
+
+2025-07-12 13:27:17,705 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 13:27:55,752 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 4 hosts
+2025-07-12 13:28:04,642 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp configuration'} on 4 hosts
+2025-07-12 13:30:20,862 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-12 13:31:36,299 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 13:31:48,398 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-12 13:34:05,317 -  nornir.core -     INFO -        run() - Running task 'remove_config' with args {} on 4 hosts
+2025-07-12 13:34:05,915 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'remove_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 18, in remove_config
+    task.run(task=send_config, config="no ntp server")
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-07-12 13:34:06,136 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'remove_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 18, in remove_config
+    task.run(task=send_config, config="no ntp server")
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-07-12 13:34:06,142 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'remove_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 18, in remove_config
+    task.run(task=send_config, config="no ntp server")
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-07-12 13:34:06,161 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'remove_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 18, in remove_config
+    task.run(task=send_config, config="no ntp server")
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2025-07-12 13:34:40,276 -  nornir.core -     INFO -        run() - Running task 'remove_config' with args {} on 4 hosts
+2025-07-12 13:34:45,757 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-12 13:35:14,332 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 13:35:23,329 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-12 13:52:25,443 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-12 13:52:37,399 -  nornir.core -     INFO -        run() - Running task 'remove_config' with args {} on 4 hosts
+2025-07-12 13:52:41,473 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 4 hosts
+2025-07-12 13:53:10,196 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-12 13:53:10,204 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 30, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.groups[0].data["ntp_server"]}")
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:53:10,206 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'random_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/.venv/lib/python3.13/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "/home/autoomation-vm/Automation/Nornir-Automation/runbook2.py", line 30, in random_config
+    task.run(task=send_config, config=f"ntp server {task.host.groups[0].data["ntp_server"]}")
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'ntp_server'
+
+2025-07-12 13:56:07,327 -  nornir.core -     INFO -        run() - Running task 'remove_config' with args {} on 4 hosts
+2025-07-12 13:56:18,356 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 4 hosts
+2025-07-13 21:22:15,246 -  nornir.core -     INFO -        run() - Running task 'pull_random_info' with args {} on 4 hosts
+2025-07-13 21:25:56,415 -  nornir.core -     INFO -        run() - Running task 'pull_random_info' with args {} on 4 hosts
+2025-07-13 21:25:57,187 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 43, in napalm_get
+    method = getattr(device, getter)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IOSDriver' object has no attribute 'get_environnment'
+
+2025-07-13 21:25:57,187 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 43, in napalm_get
+    method = getattr(device, getter)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IOSDriver' object has no attribute 'get_environnment'
+
+2025-07-13 21:25:57,188 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'pull_random_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Napalm/get_environment.py", line 12, in pull_random_info
+    task.run(task=napalm_get , getters="get_environnment")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2025-07-13 21:25:57,188 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'pull_random_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Napalm/get_environment.py", line 12, in pull_random_info
+    task.run(task=napalm_get , getters="get_environnment")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2025-07-13 21:25:57,239 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 43, in napalm_get
+    method = getattr(device, getter)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IOSDriver' object has no attribute 'get_environnment'
+
+2025-07-13 21:25:57,239 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 43, in napalm_get
+    method = getattr(device, getter)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IOSDriver' object has no attribute 'get_environnment'
+
+2025-07-13 21:25:57,239 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'pull_random_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Napalm/get_environment.py", line 12, in pull_random_info
+    task.run(task=napalm_get , getters="get_environnment")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2025-07-13 21:25:57,240 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'pull_random_info' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Napalm/get_environment.py", line 12, in pull_random_info
+    task.run(task=napalm_get , getters="get_environnment")
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2025-07-13 21:26:22,618 -  nornir.core -     INFO -        run() - Running task 'pull_random_info' with args {} on 4 hosts
+2025-07-13 21:28:09,416 -  nornir.core -     INFO -        run() - Running task 'pull_random_info' with args {} on 4 hosts

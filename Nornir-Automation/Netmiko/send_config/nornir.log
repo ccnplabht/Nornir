@@ -1,0 +1,174 @@
+2025-07-13 07:59:44,545 -  nornir.core -     INFO -        run() - Running task 'another_show_config_test' with args {} on 4 hosts
+2025-07-13 07:59:45,083 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2025-07-13 07:59:45,083 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'another_show_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Netmiko/send_config/send_config.py", line 10, in another_show_config_test
+    task.run(task=netmiko_send_config , command_string=["ntp server 11.22.11.22"])
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-07-13 07:59:45,104 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2025-07-13 07:59:45,104 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'another_show_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Netmiko/send_config/send_config.py", line 10, in another_show_config_test
+    task.run(task=netmiko_send_config , command_string=["ntp server 11.22.11.22"])
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-07-13 07:59:45,129 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2025-07-13 07:59:45,130 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'another_show_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Netmiko/send_config/send_config.py", line 10, in another_show_config_test
+    task.run(task=netmiko_send_config , command_string=["ntp server 11.22.11.22"])
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-07-13 07:59:45,137 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2025-07-13 07:59:45,138 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'another_show_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Netmiko/send_config/send_config.py", line 10, in another_show_config_test
+    task.run(task=netmiko_send_config , command_string=["ntp server 11.22.11.22"])
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-07-13 08:00:19,629 -  nornir.core -     INFO -        run() - Running task 'another_show_config_test' with args {} on 4 hosts
+2025-07-13 08:00:20,177 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2025-07-13 08:00:20,177 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2025-07-13 08:00:20,177 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'another_show_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Netmiko/send_config/send_config.py", line 10, in another_show_config_test
+    task.run(task=netmiko_send_config , config_Commands=["ntp server 11.22.11.22"])
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-07-13 08:00:20,178 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'another_show_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Netmiko/send_config/send_config.py", line 10, in another_show_config_test
+    task.run(task=netmiko_send_config , config_Commands=["ntp server 11.22.11.22"])
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-07-13 08:00:20,244 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2025-07-13 08:00:20,245 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2025-07-13 08:00:20,245 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'another_show_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Netmiko/send_config/send_config.py", line 10, in another_show_config_test
+    task.run(task=netmiko_send_config , config_Commands=["ntp server 11.22.11.22"])
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-07-13 08:00:20,245 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'another_show_config_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Netmiko/send_config/send_config.py", line 10, in another_show_config_test
+    task.run(task=netmiko_send_config , config_Commands=["ntp server 11.22.11.22"])
+  File "/home/autoomation-vm/Automation/Nornir-Automation/Scrapli/.venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-07-13 08:00:29,943 -  nornir.core -     INFO -        run() - Running task 'another_show_config_test' with args {} on 4 hosts
+2025-07-13 08:01:54,601 -  nornir.core -     INFO -        run() - Running task 'another_show_config_test' with args {} on 4 hosts
+2025-07-13 08:05:02,950 -  nornir.core -     INFO -        run() - Running task 'another_show_config_test' with args {} on 4 hosts
+2025-07-13 08:05:33,590 -  nornir.core -     INFO -        run() - Running task 'another_show_config_test' with args {} on 4 hosts
